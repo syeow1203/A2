@@ -4,43 +4,42 @@
     "height": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_admin_0_countries.json",
-      "format": {
-        "type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
     },
 
     "params": [
+        
+        {
+            "name": "countries",
+            "value": [0, 0],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [20, 10],
+                    [95, 50],
+                    [135, -25],
+                    [35, 55],
+                    [-95, 45],
+                    [-60, -20],
+                    [0, 0]
+                ],
+            
+                "labels": ["Africa", "Asia", "Australia", "Europe", "North America", "South America", "Worldwide"],
+                "name": "Country: "
+            }
+        },
 
-      {
-        "name": "countries",
-        "value": [0, 0],
-        "bind": {
-          "input": "select",
-          "options": [
-            [20, 10],
-            [95, 50],
-            [135, -25],
-            [35, 55],
-            [-95, 45],
-            [-60, -20],
-            [0, 0]
-          ],
-          
-          "labels": ["Africa", "Asia", "Australia", "Europe", "North America", "South America", "Worldwide"],
-          "name": "Country: "
+        {
+            "name": "view",
+            "value": 100,
+            "bind": {
+                "input": "range",
+                "min": 100,
+                "max": 700,
+                "step": 50,
+                "name": "Zoom Level: "
+            }
         }
-      },
-
-      {
-        "name": "view",
-        "value": 100,
-        "bind": {
-          "input": "range",
-          "min": 100,
-          "max": 700,
-          "step": 50,
-          "name": "Zoom Level: "
-        }
-      }
     ],
 
     "projection": {
@@ -57,16 +56,16 @@
     "layer": [
         {
             "transform": [
-            {
-                "calculate": "'Data is not available in ' + datum.properties.NAME",
-                "as": "note"
-            }
+                {
+                    "calculate": "'Data is not available in ' + datum.properties.NAME",
+                    "as": "note"
+                }
             ],
 
             "mark": {
-            "type": "geoshape",
-            "fill": "lightgray",
-            "stroke": "white"
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white"
             },
 
             "encoding": {
@@ -78,7 +77,7 @@
 
         {
             "data": {
-            "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/data/Birth%20Rate.csv"
+                "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/data/Birth%20Rate.csv"
             },
 
             "transform": [
@@ -113,68 +112,67 @@
             },
 
             "encoding": {
-            "description": {
-                "field": "Country"
-            },
+                "description": {
+                    "field": "Country"
+                },
+                
+                "shape": { 
+                    "field": "geo", "type": "geojson" 
+                },
             
-            "shape": { 
-                "field": "geo", "type": "geojson" 
-            },
-            
-            "color": {
-                "condition": {
-                "param": "hover",
-                "field": "Birth_Rate",
-                "title": ["Birth Rate per 1,000 population"],
-                "type": "quantitative",
-                "scale": {
+                "color": {
+                    "condition": {
+                        "param": "hover",
+                        "field": "Birth_Rate",
+                        "title": ["Birth Rate per 1,000 population"],
+                        "type": "quantitative",
+                        "scale": {
+                            
+                            "type": "threshold",
+                            "domain": [5, 15, 25, 35, 45, 55],
+                            "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+
+                        }
+                    },
+
+                    "value": "lightgrey"
+                },
+
+                "tooltip": [
+                    {
+                        "field": "Country", "type": "nominal"
+                    },
                     
-                    "type": "threshold",
-                    "domain": [5, 15, 25, 35, 45, 55],
-                    "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
-
-                }
-                },
-
-                "value": "lightgrey"
-            },
-
-            "tooltip": [
-                {
-                    "field": "Country", "type": "nominal"
-                },
-                
-                {
-                    "field": "Birth_Rate", "type": "quantitative", "title": "Birth Rate per 1,000 Population"
-                }
-            ],
+                    {
+                        "field": "Birth_Rate", "type": "quantitative", "title": "Birth Rate per 1,000 Population"
+                    }
+                ],
             
-            "strokeWidth": {
+                "strokeWidth": {
 
-                "condition": 
-                {
-                    "param": "hover", "value": 1
+                    "condition": {
+                        "param": "hover", "value": 1
+                    },
+                    
+                    "value": 1
+
                 },
-                
-                "value": 1
+            
+                "opacity": {
+                    
+                    "condition": {
+                        "param": "hover", "value": 1
+                    },
 
-            },
-
-            "opacity": {
-                
-                "condition": {
-                "param": "hover", "value": 1
-                },
-
-                "value": 1
-            }
+                    "value": 1
+                }
             }
         },
         
         {
             "data": {
-            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
-            "format": {"type": "topojson", "feature": "oceans"}
+                "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+                "format": {"type": "topojson", "feature": "oceans"}
             },
 
             "mark": {"type": "geoshape", "fill": "skyblue"}
@@ -182,8 +180,8 @@
 
         {
             "data": {
-            "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_graticules_30.json",
-            "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+                "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_graticules_30.json",
+                "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
             },
 
             "mark": {
@@ -198,10 +196,10 @@
             },
 
             "mark": {
-            "type": "text",
-            "color": "black",
-            "fontWeight": "bold",
-            "fontSize": 15
+                "type": "text",
+                "color": "black",
+                "fontWeight": "bold",
+                "fontSize": 15
             },
 
             "encoding": {
@@ -236,11 +234,10 @@
             ],
             
             "mark": {
-            "type": "text",
-            "fontSize": 10,
-            "color": "black",
-            "fontStyle": "bold",
-            "stroke":"whitesmoke"
+                "type": "text",
+                "fontSize": 10,
+                "color": "black",
+                "fontStyle": "bold"
             },
 
             "encoding": {
