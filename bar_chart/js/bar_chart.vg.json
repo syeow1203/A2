@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
+    "width": 600,
     "height": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bar_chart/js/CPI.json"

@@ -1,12 +1,12 @@
 [
   {
     "Country": "Venezuela",
-    "CPI": "2,740.27",
+    "CPI": 2740.27,
     "Mean_CPI": 169.19
   },
   {
     "Country": "Sudan",
-    "CPI": "1,344.19",
+    "CPI": 1344.19,
     "Mean_CPI": 169.19
   },
   {
