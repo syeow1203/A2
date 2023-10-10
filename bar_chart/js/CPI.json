@@ -1,0 +1,102 @@
+[
+  {
+    "Country": "Venezuela",
+    "CPI": "2,740.27",
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Sudan",
+    "CPI": "1,344.19",
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Iran",
+    "CPI": 550.93,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Malawi",
+    "CPI": 418.34,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Suriname",
+    "CPI": 294.66,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Egypt",
+    "CPI": 288.57,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Ukraine",
+    "CPI": 281.66,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Ghana",
+    "CPI": 268.36,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Nigeria",
+    "CPI": 267.51,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Guinea",
+    "CPI": 262.95,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Burkina Faso",
+    "CPI": 106.58,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Belize",
+    "CPI": 105.68,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Zimbabwe",
+    "CPI": 105.51,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Japan",
+    "CPI": 105.48,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Comoros",
+    "CPI": 103.62,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Cyprus",
+    "CPI": 102.51,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Greece",
+    "CPI": 101.87,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Maldives",
+    "CPI": 99.7,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Switzerland",
+    "CPI": 99.55,
+    "Mean_CPI": 169.19
+  },
+  {
+    "Country": "Brunei",
+    "CPI": 99.03,
+    "Mean_CPI": 169.19
+  }
+]
