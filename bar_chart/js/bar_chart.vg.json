@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
+    "width": 1600,
     "height": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bar_chart/js/CPI.json"
@@ -25,26 +25,27 @@
 
         "y": {
             "field": "Country", "type": "nominal",
-            "sort": ["Venezuela",
-                "Sudan",
-                "Iran",
-                "Malawi",
-                "Suriname",
-                "Egypt",
-                "Ukraine",
-                "Ghana",
-                "Nigeria",
-                "Guinea",
-                "Burkina Faso",
-                "Belize",
-                "Zimbabwe",
-                "Japan",
-                "Comoros",
-                "Cyprus",
-                "Greece",
-                "Maldives",
+            "sort": ["Brunei",
                 "Switzerland",
-                "Brunei"
+                "Maldives",
+                "Greece",
+                "Cyprus",
+                "Comoros",
+                "Japan",
+                "Zimbabwe",
+                "Belize",
+                "Burkina Faso",
+                "Guinea",
+                "Nigeria",
+                "Ghana",
+                "Ukraine",
+                "Egypt",
+                "Suriname",
+                "Malawi",
+                "Iran",
+                "Sudan",
+                "Venezuela"
+                
                 ]
         }
     },
@@ -52,7 +53,7 @@
     "layer": [
         {
             "mark": {
-                "type": "bar", "cornerRadiusEnd": 5.5
+                "type": "bar", "cornerRadiusEnd": 5
             },
 
             "encoding": {
@@ -70,7 +71,8 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "aria": false
+                "xOffset": -2,
+                "fontSize": 10
             },
 
             "encoding": {
@@ -79,32 +81,7 @@
                 },
 
                 "color": {
-                    "condition": {
-                        "test": "datum['CPI'] >= datum.Mean_CPI", "value": "white"
-                    },
-
-                    "value": "black"
-                }
-            }
-        },
-
-        {
-            "mark": {
-                "type": "text",
-                "dy": 100,
-                "yOffset": 50,
-                "xOffset": -45,
-                "fontWeight": "bold",
-                "align": "left"
-            },
-
-            "encoding": {
-                "text": {
-                    "value": ["Mean CPI among all the countries: 169.19"]
-                },
-
-                "color": {
-                    "value": "black"
+                    "value": "white"
                 }
             }
         }
