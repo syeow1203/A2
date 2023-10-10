@@ -1,0 +1,112 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "data": {
+        "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bar_chart/js/CPI.json"
+    },
+
+    "transform": [
+        {
+            "joinaggregate": [
+                {
+                    "op": "mean",
+                    "field": "Mean_CPI",
+                    "as": "AverageCPI"
+                }
+            ]
+        }
+    ],
+
+    "encoding": {
+        "x": {
+            "field": "CPI", "type": "quantitative", "title": "CPI"
+        },
+
+        "y": {
+            "field": "Country", "type": "nominal",
+            "sort": ["Venezuela",
+                "Sudan",
+                "Iran",
+                "Malawi",
+                "Suriname",
+                "Egypt",
+                "Ukraine",
+                "Ghana",
+                "Nigeria",
+                "Guinea",
+                "Burkina Faso",
+                "Belize",
+                "Zimbabwe",
+                "Japan",
+                "Comoros",
+                "Cyprus",
+                "Greece",
+                "Maldives",
+                "Switzerland",
+                "Brunei"
+                ]
+        }
+    },
+
+    "layer": [
+        {
+            "mark": {
+                "type": "bar", "cornerRadiusEnd": 5.5
+            },
+
+            "encoding": {
+                "color": {
+                    "condition": {
+                        "test": "datum['CPI'] >= datum.Mean_CPI", "value": "#c03636"
+                    },
+
+                    "value": "#3654c0"
+                }
+            }
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "aria": false
+            },
+
+            "encoding": {
+                "text": {
+                    "field": "CPI", "type": "quantitative", "format": ".2f"
+                },
+
+                "color": {
+                    "condition": {
+                        "test": "datum['CPI'] >= datum.Mean_CPI", "value": "white"
+                    },
+
+                    "value": "black"
+                }
+            }
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "dy": 100,
+                "yOffset": 50,
+                "xOffset": -45,
+                "fontWeight": "bold",
+                "align": "left"
+            },
+
+            "encoding": {
+                "text": {
+                    "value": ["Mean CPI among all the countries: 169.19"]
+                },
+
+                "color": {
+                    "value": "black"
+                }
+            }
+        }
+    ]
+}
