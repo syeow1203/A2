@@ -1,8 +1,263 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1600,
+    "width": 1200,
     "height": 400,
     "data": {
-        "url": ""
-    }
+      "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_admin_0_countries.json",
+      "format": {
+        "type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+
+    "params": [
+
+      {
+        "name": "countries",
+        "value": [0, 0],
+        "bind": {
+          "input": "select",
+          "options": [
+            [20, 10],
+            [95, 50],
+            [135, -25],
+            [35, 55],
+            [-95, 45],
+            [-60, -20],
+            [0, 0]
+          ],
+          
+          "labels": ["Africa", "Asia", "Australia", "Europe", "North America", "South America", "Worldwide"],
+          "name": "Country: "
+        }
+      },
+
+      {
+        "name": "view",
+        "value": 100,
+        "bind": {
+          "input": "range",
+          "min": 100,
+          "max": 700,
+          "step": 50,
+          "name": "Zoom Level: "
+        }
+      }
+    ],
+
+    "projection": {
+        "type": "equalEarth",
+        "center": {
+            "expr": "countries"
+        },
+        
+        "scale": {
+            "expr": "view"
+        }
+    },
+
+    "layer": [
+        {
+            "transform": [
+            {
+                "calculate": "'Data is not available in ' + datum.properties.NAME",
+                "as": "note"
+            }
+            ],
+
+            "mark": {
+            "type": "geoshape",
+            "fill": "lightgray",
+            "stroke": "white"
+            },
+
+            "encoding": {
+                "tooltip": {
+                    "field": "note"
+                }
+            }
+        },
+
+        {
+            "data": {
+            "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/data/Birth%20Rate.csv"
+            },
+
+            "transform": [
+                {
+                    "lookup": "Country",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_admin_0_countries.json",
+                            "format": {
+                                "type": "topojson", "feature": "ne_110m_admin_0_countries"
+                            }
+                        },
+
+                        "key": "properties.NAME"
+                    },
+
+                    "as": "geo"
+                }
+            ],
+
+            "params": [
+                {
+                    "name": "hover", 
+                    "select": {
+                        "type": "point", "on": "mouseover"
+                    }
+                }
+            ],
+
+            "mark": {
+                "type": "geoshape", "stroke": "white"
+            },
+
+            "encoding": {
+            "description": {
+                "field": "Country"
+            },
+            
+            "shape": { 
+                "field": "geo", "type": "geojson" 
+            },
+            
+            "color": {
+                "condition": {
+                "param": "hover",
+                "field": "Birth_Rate",
+                "title": ["Birth Rate per 1,000 population"],
+                "type": "quantitative",
+                "scale": {
+                    
+                    "type": "threshold",
+                    "domain": [5, 15, 25, 35, 45, 55],
+                    "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+
+                }
+                },
+
+                "value": "lightgrey"
+            },
+
+            "tooltip": [
+                {
+                    "field": "Country", "type": "nominal"
+                },
+                
+                {
+                    "field": "Birth_Rate", "type": "quantitative", "title": "Birth Rate per 1,000 Population"
+                }
+            ],
+            
+            "strokeWidth": {
+
+                "condition": 
+                {
+                    "param": "hover", "value": 1
+                },
+                
+                "value": 1
+
+            },
+
+            "opacity": {
+                
+                "condition": {
+                "param": "hover", "value": 1
+                },
+
+                "value": 1
+            }
+            }
+        },
+        
+        {
+            "data": {
+            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+            "format": {"type": "topojson", "feature": "oceans"}
+            },
+
+            "mark": {"type": "geoshape", "fill": "skyblue"}
+        },
+
+        {
+            "data": {
+            "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_graticules_30.json",
+            "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+            },
+
+            "mark": {
+                "type": "geoshape", "fill": null, "stroke": "lightgray"
+            }
+        
+        },
+        
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/data/Continents.csv"
+            },
+
+            "mark": {
+            "type": "text",
+            "color": "black",
+            "fontWeight": "bold",
+            "fontSize": 15
+            },
+
+            "encoding": {
+                "text": {
+                    "field": "Continents", "type": "nominal"
+                },
+
+                "latitude": {
+                    "field": "Latitude", "type": "quantitative"
+                },
+
+                "longitude": {
+                    "field": "Longitude", "type": "quantitative"
+                }
+            }
+        
+        },
+        
+        {
+            "transform": [
+                {
+                    "lookup": "properties.NAME",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
+                        },
+                        
+                        "key": "name",
+                        "fields": ["latitude", "longitude"]
+                    }
+                }
+            ],
+            
+            "mark": {
+            "type": "text",
+            "fontSize": 10,
+            "color": "black",
+            "fontStyle": "bold",
+            "stroke":"whitesmoke"
+            },
+
+            "encoding": {
+                "longitude": {
+                    "field": "longitude", "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "latitude", "type": "quantitative"
+                },
+                "text": {
+                    "field": "properties.NAME", "type": "nominal"
+                },
+
+                "opacity": {"value": 0}
+            }
+        }
+    ],
+
+    "config": {}
 }

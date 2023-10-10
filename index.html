@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+    
     
     
     <link rel="stylesheet" type="text/css" href="style.css" media="all">
@@ -26,10 +26,11 @@
         </div>
 
 
-        <h1>_______________________________________________________________________________________________________________________</h1>
+        <h1>______________________________________________________________________________________________</h1>
 
 
         <div id="bar_chart"></div>
+        <div id="choropleth_map"></div>
 
     </div>
 
@@ -38,6 +39,11 @@
 
         var vg1 = "bar_chart/js/bar_chart.vg.json";
         vegaEmbed('#bar_chart', vg1).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg2 = "choropleth_map/js/choropleth.vg.json";
+        vegaEmbed('#choropleth_map', vg2).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
