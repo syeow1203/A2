@@ -15,7 +15,7 @@
                 "min": 50,
                 "max": 80,
                 "step": 5,
-                "name": "Min Rate: "
+                "name": "Min Expectancy: "
             }
         },
 
@@ -51,130 +51,39 @@
 
     "transform": [
         {
+            "filter": "datum.Life_Expectancy > rate"
+        },
+
+        {
             "filter": "continent == null || datum.Continent == continent"
         }
     ],
 
-    "layer": [
-        {
-            "params": [
-                {
-                    "name": "fil",
-                    "select": {
-                        "type": "interval", "resolve": "global"
-                    }
-                }
-            ],
-
-            "mark": "circle",
-            "encoding": {
-                "x": {
-                    "field": "Life_Expectancy",
-                    "type": "quantitative"
-                },
-
-                "y": {
-                    "field": "GDP",
-                    "type": "quantitative"
-                },
-
-                "size": {
-                    "field": "Life_Expectancy",
-                    "type": "quantitative",
-                    "scale": {
-                        "type": "linear",
-                        "range": [50, 300]
-                    }
-                },
-
-                "color": {
-                    "field": "Continent",
-                    "type": "nominal",
-                    "scale": {
-                        "domain": ["Asia", "Africa", "Europe", "North America", "South America", "Oceania"],
-                        "range": ["#e41a1c", "#CCCC00", "#ff7f00", "#a6cee3", "#377eb8", "#a65628"]
-                    }
-                },
-
-                "opacity": {
-                    "condition": {
-                        "param": "fil",
-                        "value": 1
-                    },
-
-                    "value": 0
-                },
-
-                "tooltip": [
-                    {
-                        "field": "Continent", "type": "nominal"
-                    },
-
-                    {
-                        "field": "Country", "type": "nominal"
-                    },
-
-                    {
-                        "field": "Life_Expectancy", "type": "quantitative"
-                    },
-
-                    {
-                        "field": "GDP", "type": "quantitative"
-                    }
-
-
-                ]
+    "encoding": {
+        "x": {
+            "field": "Life_Expectancy",
+            "type": "quantitative",
+            "scale": {
+                "domain": [50, 85]
             }
         },
 
-        {
-            "mark": {
-                "type": "text",
-                "align": "right",
-                "baseline": "middle",
-                "dx": 17,
-                "dy": 0,
-                "fontSize": 13,
-                "fontStyle": "bold"
+        "y": {
+            "field": "GDP",
+            "type": "quantitative",
+            "axis": {
+                "tickCount": 5
             },
 
-            "encoding": {
-                "text": {
-                    "field": "Country", "type": "nominal"
-                },
-
-                "color": {
-                    "value": "black"
-                },
-
-                "x": {
-                    "field": "Life_Expectancy", "type": "quantitative"
-                },
-
-                "y": {
-                    "field": "GDP", "type": "quantitative"
-                },
-
-                "tooltip": [
-                    {
-                        "field": "Continent", "type": "nominal"
-                    },
-
-                    {
-                        "field": "Country", "type": "nominal"
-                    },
-
-                    {
-                        "field": "Life_Expectancy", "type": "quantitative"
-                    },
-
-                    {
-                        "field": "GDP", "type": "quantitative"
-                    }
-                ]
+            "scale": {
+                "type": "log",
+                "domain": [4000000000, 22000000000000]
             }
+
         }
-    ],
+    },
+
+    
 
     "config": {}
 }
