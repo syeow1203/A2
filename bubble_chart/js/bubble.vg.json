@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1800,
+    "width": 1200,
     "height": 600,
-    "title": "Happiness Index VS Social Support",
+    "title": "CPI vs Unemployment Rate",
     "data": {
       "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bubble_chart/data/GDP.csv"
     },
@@ -26,15 +26,15 @@
     ],
         "encoding": {
             "x": {
-                "field": "Life_Expectancy",
+                "field": "GDP",
                 "type": "quantitative",
                 "title": "Life Expectancy",
-                "scale": {"domain": [50, 85]}
+                "scale": {"domain": [4000000000, 200000000000000]}
             },
             "y": {
                 "field": "CPI",
                 "type": "quantitative",
-                "scale": {"domain": [80, 2500]}
+                "scale": {"domain": [0, 3000]}
             }
         },
 
