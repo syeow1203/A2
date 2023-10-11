@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1200,
-    "height": 400,
+    "width": 1800,
+    "height": 600,
+    "title": "Happiness Index VS Social Support",
     "data": {
       "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bubble_chart/data/GDP.csv"
     },
@@ -9,81 +10,54 @@
     "params": [
         {
             "name": "rate",
-            "value": 10,
+            "value": 0,
             "bind": {
                 "input": "range",
-                "min": 50,
+                "min": 0,
                 "max": 80,
-                "step": 5,
-                "name": "Min Expectancy: "
+                "step": 10,
+                "name": "Min Life Expectancy: "
             }
-        },
-
-        {
-            "name": "continent",
-            "bind": {
-                "input": "select",
-                "options": [
-                    "Asia",
-                    "Africa",
-                    "Europe",
-                    "North America",
-                    "South America",
-                    "Oceania",
-                    null
-                ],
-
-                "labels": [
-                    "Asia",
-                    "Africa",
-                    "Europe",
-                    "North America",
-                    "South America",
-                    "Oceania",
-                    "Worldwide"
-                ],
-
-                "name": "Selection: "
-            }
-
         }
     ],
 
     "transform": [
-        {
-            "filter": "datum.Life_Expectancy > rate"
-        },
-
-        {
-            "filter": "continent == null || datum.Continent == continent"
-        }
+        {"filter": "datum.Life_Expectancy > rate"}
     ],
-
-    "encoding": {
-        "x": {
-            "field": "Life_Expectancy",
-            "type": "quantitative",
-            "scale": {
-                "domain": [50, 85]
+        "encoding": {
+            "x": {
+                "field": "Life_Expectancy",
+                "type": "quantitative",
+                "title": "Life Expectancy",
+                "scale": {"domain": [50, 85]}
+            },
+            "y": {
+                "field": "CPI",
+                "type": "quantitative",
+                "scale": {"domain": [80, 2500]}
             }
         },
 
-        "y": {
-            "field": "GDP",
-            "type": "quantitative",
-            "axis": {
-                "tickCount": 5
-            },
+        "layer": [
+        {
+            "mark":"circle",
+            "encoding": {
+                "color":{
+                    "field": "Life_Expectancy",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [50, 85]
+                    }
+                },
 
-            "scale": {
-                "type": "log",
-                "domain": [4000000000, 22000000000000]
+                "opacity": {"value": 1},
+                "size":{"value": 100},
+                "tooltip": [
+                    {"field": "Country", "type": "nominal"},
+                    {"field": "Life_Expectancy", "type": "quantitative", "title": "Life Expectancy"},
+                    {"field": "CPI", "type": "quantitative"}
+                ]
             }
-
         }
-    },
-
-    
-
-    "config": {}
+    ]
 }
