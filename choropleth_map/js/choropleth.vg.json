@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1200,
+    "width": 1250,
     "height": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_admin_0_countries.json",

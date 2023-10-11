@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1200,
+    "width": 1250,
     "height": 600,
     "title": "CPI vs Unemployment Rate",
     "data": {
@@ -14,22 +14,22 @@
             "bind": {
                 "input": "range",
                 "min": 0,
-                "max": 80,
-                "step": 10,
-                "name": "Min Life Expectancy: "
+                "max": 0.2,
+                "step": 0.01,
+                "name": "Min Unemployment Rate: "
             }
         }
     ],
 
     "transform": [
-        {"filter": "datum.Life_Expectancy > rate"}
+        {"filter": "datum.Unemployment_Rate > rate"}
     ],
         "encoding": {
             "x": {
-                "field": "GDP",
+                "field": "Unemployment_Rate",
                 "type": "quantitative",
-                "title": "Life Expectancy",
-                "scale": {"domain": [4000000000, 200000000000000]}
+                "title": "Unemployment Rate",
+                "scale": {"domain": [0, 0.3]}
             },
             "y": {
                 "field": "CPI",
@@ -43,10 +43,10 @@
             "mark":"circle",
             "encoding": {
                 "color":{
-                    "field": "Life_Expectancy",
+                    "field": "Unemployment_Rate",
                     "type": "quantitative",
                     "scale": {
-                        "domain": [50, 85]
+                        "domain": [0, 0.3]
                     }
                 },
 
@@ -54,7 +54,7 @@
                 "size":{"value": 100},
                 "tooltip": [
                     {"field": "Country", "type": "nominal"},
-                    {"field": "Life_Expectancy", "type": "quantitative", "title": "Life Expectancy"},
+                    {"field": "Unemployment_Rate", "type": "quantitative", "title": "Unemployment_Rate"},
                     {"field": "CPI", "type": "quantitative"}
                 ]
             }
