@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1250,
+    "width": 1100,
     "height": 600,
     "title": "CPI vs Unemployment Rate",
     "data": {
@@ -57,6 +57,88 @@
                     {"field": "Unemployment_Rate", "type": "quantitative", "title": "Unemployment_Rate"},
                     {"field": "CPI", "type": "quantitative"}
                 ]
+            }
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline":"top",
+                "dx": 8,
+                "dy": -5,
+                "fontSize": 11.5,
+                "fontStyle": "bold"
+            },
+            "encoding": {
+                "text": {"field": "Country", "type": "nominal"},
+                "color": {"value": "red"},
+                "opacity": {
+                  "condition": {
+                    "test": "datum['Country'] == 'Venezuela' || datum['Country'] == 'Sudan' || datum['Country'] == 'South Africa'",
+                    "value": 1
+                  },
+                  "value": 0
+                },
+                "tooltip": [
+                    {"field": "Country", "type": "nominal"},
+                    {"field": "Unemployment_Rate", "type": "quantitative", "title": "Unemployment_Rate"},
+                    {"field": "CPI", "type": "quantitative"}
+                ]
+            }
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "baseline": "middle",
+                "dx": 40,
+                "dy": 20,
+                "fontSize": 11,
+                "fontWeight": "italic"
+            },
+
+            "encoding": {
+                "text": {
+                    "value": [
+                        "Venezuela has the highest CPI value with",
+                        "an unemployment rate less than 0.1"
+                    ]
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Country'] == 'Venezuela'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "baseline": "middle",
+                "dx": -60,
+                "dy": -35,
+                "fontSize": 11,
+                "fontWeight": "italic"
+            },
+
+            "encoding": {
+                "text": {
+                    "value": [
+                        "South Africa has the highest unemployment rate",
+                        "alongside a CPI that falls below national average"
+                    ]
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Country'] == 'South Africa'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
             }
         }
     ]
