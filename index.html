@@ -1,39 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
+<html>
+<head>    
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
     
     
     
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 
     
     <title>FIT3179 Data Visualization 2</title>
+
 </head>
-<body>
+
+<body style="background-color: aliceblue;">
 
     <div class="pure-g">
-
         <div class="pure-u-1">
-            <img src="/pic.jpeg" style="width: 300px; height: 200px;">
-            <p>
-                blablabla idk first
-            </p>
+            <div class="image-with-text">
+                <img src="/pic.jpeg" style="width: 300px; height: 200px;">
+                <div class="text-container">
+                    <h1>
+                        ECONOMIC DEVELOPMENT IN YEAR 2023
+                    </h1>
+                    <p>
+                        Economic development is the transition of underdeveloped, low-income national economies into advanced industrial economies. 
+                        While it is occasionally used interchangeably with economic growth, it typically refers to a transformation in a country's economy that 
+                        encompasses both qualitative and quantitative enhancements. It aimed at enhancing living standards, reducing poverty and fostering sustainable progress. 
+                        It encompasses policies and strategies that promote economic growth, job creation, and better access to education, healthcare, and essential services, 
+                        ultimately contributing to an improved quality of life for a nation's citizens.
+                    </p>
+                    <p>
+                        source: https://www.britannica.com/money/topic/economic-development
+                    </p>
+                </div>
+            </div>
         </div>
-
-
-        <h1>______________________________________________________________________________________________</h1>
-
-
-        <div id="bar_chart"></div>
-        <div id="choropleth_map"></div>
-        <div id="bubble_chart"></div>
-
     </div>
+    
+
+    <h1>______________________________________________________________________________________________</h1>
+
+    <div id="bar_chart"></div>
+    <div id="choropleth_map"></div>
+    <div id="bubble_chart"></div>
+    <div id="stacked_bar"></div>
+
 
 
     <script type="text/javascript">
@@ -50,6 +63,11 @@
 
         var vg3 = "bubble_chart/js/bubble.vg.json";
         vegaEmbed('#bubble_chart', vg3).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg4 = "stacked_bar/js/stacked.vg.json";
+        vegaEmbed('#stacked_bar', vg4).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
