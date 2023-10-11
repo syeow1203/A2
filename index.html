@@ -31,6 +31,7 @@
 
         <div id="bar_chart"></div>
         <div id="choropleth_map"></div>
+        <div id="bubble_chart"></div>
 
     </div>
 
@@ -44,6 +45,11 @@
 
         var vg2 = "choropleth_map/js/choropleth.vg.json";
         vegaEmbed('#choropleth_map', vg2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg3 = "bubble_chart/js/bubble.vg.json";
+        vegaEmbed('#bubble_chart', vg3).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 

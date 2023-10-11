@@ -1,0 +1,187 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1200,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bubble_chart/data/GDP.csv"
+    },
+
+    "params": [
+        {
+            "name": "rate",
+            "value": 10,
+            "bind": {
+                "input": "range",
+                "min": 50,
+                "max": 80,
+                "step": 5,
+                "name": "Min Rate: "
+            }
+        },
+
+        {
+            "name": "continent",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Asia",
+                    "Africa",
+                    "Europe",
+                    "North America",
+                    "South America",
+                    "Oceania",
+                    null
+                ],
+
+                "labels": [
+                    "Asia",
+                    "Africa",
+                    "Europe",
+                    "North America",
+                    "South America",
+                    "Oceania",
+                    "Worldwide"
+                ],
+
+                "name": "Selection: "
+            }
+
+        }
+    ],
+
+    "transform": [
+        {
+            "filter": "continent == null || datum.Continent == continent"
+        }
+    ],
+
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "fil",
+                    "select": {
+                        "type": "interval", "resolve": "global"
+                    }
+                }
+            ],
+
+            "mark": "circle",
+            "encoding": {
+                "x": {
+                    "field": "Life_Expectancy",
+                    "type": "quantitative"
+                },
+
+                "y": {
+                    "field": "GDP",
+                    "type": "quantitative"
+                },
+
+                "size": {
+                    "field": "Life_Expectancy",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": ["Life_Expectancy"],
+                        "range": [50, 55, 60, 65, 70, 75, 80]
+                    }
+                },
+
+                "color": {
+                    "field": "Continent",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["Life_Expectancy"],
+                        "range": ["#e41a1c", "#CCCC00", "#ff7f00", "#a6cee3", "#377eb8", "#a65628"]
+                    }
+                },
+
+                "opacity": {
+                    "condition": {
+                        "param": "fil",
+                        "field": "Continent",
+                        "type": "nominal",
+                        "legend": null
+                    },
+
+                    "value": 0.5
+                },
+
+                "tooltip": [
+                    {
+                        "field": "Continent", "type": "nominal"
+                    },
+
+                    {
+                        "field": "Country", "type": "nominal"
+                    },
+
+                    {
+                        "field": "Life_Expectancy", "type": "quantitative"
+                    },
+
+                    {
+                        "field": "GDP", "type": "quantitative"
+                    }
+
+
+                ]
+            }
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": 17,
+                "dy": 0,
+                "fontSize": 11.5,
+                "fontStyle": "bold"
+            },
+
+            "encoding": {
+                "text": {
+                    "field": "Country", "type": "nominal"
+                },
+
+                "color": {
+                    "value": "black"
+                },
+
+                "opacity": {
+                    "value": 0
+                },
+
+                "x": {
+                    "field": "Life_Expectancy", "type": "quantitative"
+                },
+
+                "y": {
+                    "field": "GDP", "type": "quantitative"
+                },
+
+                "tooltip": [
+                    {
+                        "field": "Continent", "type": "nominal"
+                    },
+
+                    {
+                        "field": "Country", "type": "nominal"
+                    },
+
+                    {
+                        "field": "Life_Expectancy", "type": "quantitative"
+                    },
+
+                    {
+                        "field": "GDP", "type": "quantitative"
+                    }
+                ]
+            }
+        }
+    ],
+
+    "config": {}
+}

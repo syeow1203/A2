@@ -1,4 +1,4 @@
-﻿Country,GDP,Life expectancy,Continent
+﻿Country,GDP,Life_Expectancy,Continent
 Afghanistan,"$19,101,353,833 ",64.5,Asia
 Albania,"$15,278,077,447 ",78.5,Europe
 Algeria,"$169,988,236,398 ",76.7,Africa
@@ -33,7 +33,7 @@ Chile,"$282,318,159,745 ",80,South America
 China,"$19,910,000,000,000 ",77,Asia
 Colombia,"$323,802,808,108 ",77.1,South America
 Comoros,"$1,185,728,677 ",64.1,Africa
-Republic of the Congo,"$10,820,591,131 ",64.3,Africa
+Congo,"$10,820,591,131 ",64.3,Africa
 Costa Rica,"$61,773,944,174 ",80.1,North America
 Croatia,"$60,415,553,039 ",78.1,Europe
 Cyprus,"$24,564,647,935 ",80.8,Europe
