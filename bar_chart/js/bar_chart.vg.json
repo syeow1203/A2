@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 1250,
     "height": 400,
-    "background": "aliceblue",
     "title": "Top 10 Highest & Lowest Consumer Price Index Countries",
+    "background": "aliceblue",
     "data": {
         "url": "https://raw.githubusercontent.com/syeow1203/A2/main/bar_chart/js/CPI.json"
     },
@@ -55,6 +55,34 @@
     "layer": [
         {
             "mark": {
+                "type": "text",
+                "baseline": "middle",
+                "dx": -300,
+                "dy": -50,
+                "fontSize": 15,
+                "fontWeight": "italic"
+            },
+
+            "encoding": {
+                "text": {
+                    "value": [
+                        "In year 2023, Venezuela has the highest Consumer Price Index (CPI)",
+                        "while Brunei is having the lowest Consumer Price Index (CPI)."
+                        
+                    ]
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Country'] == 'Venezuela'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
+        },
+
+        {
+            "mark": {
                 "type": "bar", "cornerRadiusEnd": 5
             },
 
@@ -84,34 +112,6 @@
 
                 "color": {
                     "value": "white"
-                }
-            }
-        },
-
-        {
-            "mark": {
-                "type": "text",
-                "baseline": "middle",
-                "dx": -300,
-                "dy": -300,
-                "fontSize": 15,
-                "fontWeight": "italic"
-            },
-
-            "encoding": {
-                "text": {
-                    "value": [
-                        "In year 2023, Venezuela has the highest Consumer Price Index (CPI)",
-                        "while Brunei is having the lowest Consumer Price Index (CPI)."
-                        
-                    ]
-                },
-                "opacity": {
-                    "condition": {
-                        "test": "datum['Country'] == 'Venezuela'",
-                        "value": 1
-                    },
-                    "value": 0
                 }
             }
         }

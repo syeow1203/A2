@@ -45,3 +45,17 @@
 .text-container h1 {
     margin-left: 10px;
 }
+
+.paragraph-beside-choropleth {
+    margin-top: -60px;
+    margin-left: 350px;
+   
+}
+
+.stack {
+    margin-left: 50px;
+}
+
+.stack p {
+    font-size: 18px;
+}

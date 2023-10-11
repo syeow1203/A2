@@ -3,7 +3,7 @@
     "width": 1100,
     "height": 600,
     "background": "aliceblue",
-    "title": "Death Rates of HIV By Age Group of Each WHO Region",
+    "title": "Education Rate by Continents",
     "data": {
       "url": "https://raw.githubusercontent.com/syeow1203/A2/main/stacked_bar/data/Enrolment.csv"
     },
