@@ -1,0 +1,165 @@
+﻿Country,Continent,Gross_Primary_Education_Enrollment,Gross_Tertiary_Education_Enrollment
+Afghanistan,Asia,1.04,0.097
+Albania,Europe,1.07,0.55
+Algeria,Africa,1.099,0.514
+Angola,Africa,1.135,0.093
+Argentina,South America,1.097,0.9
+Armenia,Asia,0.927,0.546
+Australia,Oceania,1.003,1.131
+Austria,Europe,1.031,0.851
+Azerbaijan,Asia,0.997,0.277
+The Bahamas,North America,0.814,0.151
+Bahrain,Asia,0.994,0.505
+Bangladesh,Asia,1.165,0.206
+Barbados,South America,0.994,0.654
+Belgium,Europe,1.039,0.797
+Belize,North America,1.117,0.247
+Benin,Africa,1.22,0.123
+Bhutan,Asia,1.001,0.156
+Botswana,Africa,1.032,0.249
+Brazil,South America,1.154,0.513
+Brunei,Asia,1.032,0.314
+Bulgaria,Europe,0.893,0.71
+Burkina Faso,Africa,0.961,0.065
+Burundi,Africa,1.214,0.061
+Ivory Coast,Africa,0.998,0.093
+Cape Verde,Africa,1.04,0.236
+Cambodia,Asia,1.074,0.137
+Cameroon,Africa,1.034,0.128
+Canada,North America,1.009,0.689
+Central African Republic,Africa,1.02,0.03
+Chad,Africa,0.868,0.033
+Chile,South America,1.014,0.885
+China,Asia,1.002,0.506
+Colombia,South America,1.145,0.553
+Comoros,Africa,0.995,0.09
+Congo,Africa,1.066,0.127
+Costa Rica,North America,1.133,0.552
+Croatia,Europe,0.965,0.679
+Cyprus,Europe,0.993,0.759
+Czech Republic,Europe,1.007,0.641
+Dem. Rep. Congo,Africa,1.08,0.066
+Denmark,Europe,1.013,0.806
+Djibouti,Africa,0.753,0.053
+Dominican Rep.,North America,1.057,0.599
+Ecuador,South America,1.033,0.449
+Egypt,Africa,1.063,0.352
+El Salvador,North America,0.948,0.294
+Eq. Guinea,Africa,0.618,0.019
+Estonia,Europe,0.972,0.696
+Ethiopia,Africa,1.01,0.081
+Fiji,Oceania,1.064,0.161
+Finland,Europe,1.002,0.882
+France,Europe,1.025,0.656
+Gabon,Africa,1.399,0.083
+The Gambia,Africa,0.98,0.027
+Georgia,Asia,0.986,0.639
+Germany,Europe,1.04,0.702
+Ghana,Africa,1.048,0.157
+Greece,Europe,0.996,1.366
+Guatemala,North America,1.019,0.218
+Guinea,Oceania,0.915,0.116
+Guinea-Bissau,Africa,1.187,0.026
+Guyana,South America,0.978,0.116
+Haiti,North America,1.136,0.011
+Honduras,North America,0.915,0.262
+Hungary,Europe,1.008,0.485
+Iceland,Europe,1.004,0.718
+India,Asia,1.13,0.281
+Indonesia,Asia,1.064,0.363
+Iran,Asia,1.107,0.681
+Iraq,Asia,1.087,0.162
+Ireland,Europe,1.009,0.778
+Israel,Asia,1.049,0.634
+Italy,Europe,1.019,0.619
+Jamaica,North America,0.91,0.271
+Japan,Asia,0.988,0.632
+Jordan,Asia,0.815,0.344
+Kazakhstan,Asia,1.044,0.617
+Kenya,Africa,1.032,0.115
+Kuwait,Asia,0.924,0.544
+Kyrgyzstan,Asia,1.076,0.413
+Laos,Asia,1.024,0.15
+Latvia,Europe,0.994,0.881
+Lebanon,Asia,0.951,0.263
+Lesotho,Africa,1.209,0.102
+Liberia,Africa,0.851,0.119
+Libya,Africa,1.09,0.605
+Lithuania,Europe,1.039,0.724
+Luxembourg,Europe,1.023,0.192
+Madagascar,Africa,1.425,0.054
+Malawi,Africa,1.425,0.008
+Malaysia,Asia,1.053,0.451
+Maldives,Asia,0.971,0.312
+Mali,Africa,0.756,0.045
+Malta,Europe,1.05,0.543
+Mauritania,Africa,0.999,0.05
+Mauritius,Africa,1.011,0.406
+Mexico,North America,1.058,0.402
+Moldova,Europe,0.906,0.398
+Mongolia,Asia,1.04,0.656
+Montenegro,Europe,1,0.561
+Morocco,Africa,1.139,0.359
+Mozambique,Africa,1.126,0.073
+Myanmar,Asia,1.123,0.188
+Namibia,Africa,1.242,0.229
+Nepal,Asia,1.421,0.124
+Netherlands,Europe,1.042,0.85
+New Zealand,Oceania,1,0.82
+Nicaragua,North America,1.206,0.174
+Niger,Africa,0.747,0.044
+Nigeria,Africa,0.847,0.102
+Norway,Europe,1.003,0.82
+Oman,Asia,1.034,0.38
+Pakistan,Asia,0.943,0.09
+Panama,North America,0.944,0.478
+Papua New Guinea,Oceania,1.085,0.018
+Paraguay,South America,1.044,0.346
+Peru,South America,1.069,0.707
+Philippines,Asia,1.075,0.355
+Poland,Europe,1,0.678
+Portugal,Europe,1.062,0.639
+Qatar,Asia,1.038,0.179
+Romania,Europe,0.852,0.494
+Russia,Asia,1.026,0.819
+Rwanda,Africa,1.33,0.067
+Saint Lucia,North America,1.026,0.141
+Saint Vincent and the Grenadines,North America,1.134,0.237
+Samoa,Oceania,1.105,0.076
+Saudi Arabia,Asia,0.998,0.68
+Senegal,Africa,0.81,0.128
+Serbia,Europe,1.003,0.672
+Sierra Leone,Africa,1.128,0.02
+Singapore,Asia,1.006,0.848
+Slovakia,Europe,0.987,0.466
+Slovenia,Europe,1.004,0.786
+South Africa,Africa,1.009,0.224
+South Korea,Asia,0.981,0.943
+Spain,Europe,1.027,0.889
+Sri Lanka,Asia,1.002,0.196
+Sudan,Africa,0.768,0.169
+Suriname,South America,1.088,0.126
+Sweden,Europe,1.266,0.67
+Switzerland,Europe,1.052,0.596
+Syria,Asia,0.817,0.401
+Tajikistan,Asia,1.009,0.313
+Tanzania,Africa,0.942,0.04
+Thailand,Asia,0.998,0.493
+Timor-Leste,Asia,1.153,0.178
+Togo,Africa,1.238,0.145
+Tonga,Oceania,1.163,0.064
+Trinidad and Tobago,South America,1.062,0.12
+Tunisia,Africa,1.154,0.317
+Turkey,Asia,0.932,0.239
+Uganda,Africa,1.027,0.048
+Ukraine,Europe,0.99,0.827
+United Arab Emirates,Asia,1.084,0.368
+United Kingdom,Europe,1.012,0.6
+United States of America,North America,1.018,0.882
+Uruguay,South America,1.085,0.631
+Vanuatu,Oceania,1.093,0.047
+Venezuela,South America,0.972,0.793
+Vietnam,Asia,1.106,0.285
+Yemen,Asia,0.936,0.102
+Zambia,Africa,0.987,0.041
+Zimbabwe,Africa,1.099,0.1
