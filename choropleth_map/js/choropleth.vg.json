@@ -244,9 +244,11 @@
                 "longitude": {
                     "field": "longitude", "type": "quantitative"
                 },
+
                 "latitude": {
                     "field": "latitude", "type": "quantitative"
                 },
+                
                 "text": {
                     "field": "properties.NAME", "type": "nominal"
                 },
