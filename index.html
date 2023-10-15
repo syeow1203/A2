@@ -17,7 +17,7 @@
 
     
     <title>FIT3179 Data Visualization 2</title>
-
+    
 </head>
 
 <body style="background-color: aliceblue;">
@@ -59,7 +59,7 @@
                     In the context of the year 2023, <b style="color: #a21d02;">Venezuela</b> is prominently shaded in the darkest orange, symbolizing
                     its status as the country with the <b style="color: #a21d02;">highest CPI</b>. <br>
                     <br>
-                    In contrast, countries like <b style="color: #ed750d;">Brunei and Comoros</b>, among others, are depicted in the lighest shade of orange,
+                    In contrast, countries like <b style="color: #ed750d;">Greece and Japan</b>, among others, are depicted in the lighest shade of orange,
                     underscoring their relatively <b style="color: #ed750d;">lower CPI</b>, hovering around 100. <br>
                     <br>
 
@@ -74,25 +74,67 @@
 
     <br>
 
-    
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                <div id="bar_chart"></div>
+            </td>
+            <td>
+                <h3>Top 10 <span style = "color: #a21d02;">HIGHEST</span> & <span style="color: blue;">LOWEST</span>  Birth Rate Countries in 2023</h3>
 
-    <div id="bar_chart"></div>
+                <p> This bar chart depicts the birth rates for the <b style="color: #a21d02;">top 10 highest</b> and <b style="color: blue;">lowest-ranking</b> countries in 2023.
+                    The highest birth rate countries are represented in red while the lowest birth rate countries are displayed
+                    in blue. <br>
 
-    <div class="paragraph-beside-choropleth">
-        <p>Countries that implement effective family planning policies often <b>experience more controlled population growth</b>, 
-            which can be better managed for economic development.</p>
-    </div>
+                    <br>
 
-    <div id="bubble_chart"></div>
+                    <b style="color: #a21d02;">Niger</b> stands out with the <b style="color: #a21d02;">highest birth rate</b> while <b style="color: blue;">South Korea</b> 
+                    reports the <b style="color: blue;">lowest birth rate</b> among all countries in the dataset. <br>
+                    
+                    <br>
+
+                    This information leads to an intriguing <b>correlation between birth rates and the Consumer Price Index (CPI)</b>, 
+                    as evidenced by the <b>low CPI in Japan and Greece</b> on the previous choropleth map. Interestingly, Japan and Greece both appear in 
+                    the <b>top 10 lowest birth rate countries</b>, suggesting a potential <b>connection between birth rates and economic factors</b>, such as the CPI. <br>
+
+                    <br>
+                </p>
+            </td>
+            
+        </tr>
+    </table>
+
+    <br>
+
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                <h3>Consumer Price Index In Different Countries In 2023</h3>
+                <p> The map displays various countries shaded in varying degrees of orange relecting their respective 
+                    <b>Consumer Price Index (CPI) in the year 2023.</b>
+                    The darkest orange hue on the scale signifies those nations with the highest CPI.<br>
+                    <br>
+                    In the context of the year 2023, <b style="color: #a21d02;">Venezuela</b> is prominently shaded in the darkest orange, symbolizing
+                    its status as the country with the <b style="color: #a21d02;">highest CPI</b>. <br>
+                    <br>
+                    In contrast, countries like <b style="color: #ed750d;">Greece and Japan</b>, among others, are depicted in the lighest shade of orange,
+                    underscoring their relatively <b style="color: #ed750d;">lower CPI</b>, hovering around 100. <br>
+                    <br>
+
+                    It is worth noting that the <b>average CPI</b> across all countries in 2023 stands at <b>169.19</b>. <br>
+                </p>
+            </td>
+            <td>
+                <div id="bubble_chart"></div>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+
+
     <div id="stacked_bar"></div>
-
-    <div class="stack">
-        <p>
-            Education is a critical factor in a region's socio-economic development. Higher education rates are often associated with increased economic growth, 
-            better living standards, and reduced poverty. 
-        </p>
-    </div>
-
 
 
 

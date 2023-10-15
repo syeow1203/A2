@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 600,
-    "height": 300,
+    "height": 400,
     "background": "aliceblue",
     "title": "Consumer Price Index in Different Countries in 2023",
     "data": {

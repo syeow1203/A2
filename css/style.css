@@ -4,18 +4,24 @@
 }
 
 #bar_chart {
-    margin-left: -300px;
     font-size: 10;
+    margin-top: 20px;
+    margin-right: -350px;
+    position: inherit;
 }
 
 #choropleth_map {
     margin-left: 30px;
     margin-top: 20px;
+    margin-right: -45px;
+    position: inherit;
 
 }
 
 #bubble_chart {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-right: -45px;
+    position: inherit;
 }
 
 #stacked_bar {
@@ -48,26 +54,16 @@
 
 }
 
-.stack {
-    margin-left: 50px;
-}
-
-.stack p {
-    font-size: 18px;
-}
-
-
-h3{
+h3 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
-    padding-top: 5px;
-    display: flex;
+    font-size: 20px;
+    display: inline;
+    padding-left: 15%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-p{
+p {
     font-family: sans-serif;
     font-size: 15px;
     text-align: justify;
