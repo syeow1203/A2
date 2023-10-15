@@ -1,0 +1,102 @@
+[
+  {
+    "Country": "Niger",
+    "Birth_Rate": 46.08,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Chad",
+    "Birth_Rate": 42.17,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Mali",
+    "Birth_Rate": 41.54,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Dem. Rep. Congo",
+    "Birth_Rate": 41.18,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Angola",
+    "Birth_Rate": 40.73,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Burundi",
+    "Birth_Rate": 39.01,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "The Gambia",
+    "Birth_Rate": 38.54,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Uganda",
+    "Birth_Rate": 38.14,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Burkina Faso",
+    "Birth_Rate": 37.93,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Nigeria",
+    "Birth_Rate": 37.91,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "South Korea",
+    "Birth_Rate": 6.4,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Italy",
+    "Birth_Rate": 7.3,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Japan",
+    "Birth_Rate": 7.4,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Spain",
+    "Birth_Rate": 7.9,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Greece",
+    "Birth_Rate": 8.1,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Portugal",
+    "Birth_Rate": 8.5,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Finland",
+    "Birth_Rate": 8.6,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Ukraine",
+    "Birth_Rate": 8.7,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Singapore",
+    "Birth_Rate": 8.8,
+    "Mean_BirthRate": 20.4
+  },
+  {
+    "Country": "Bulgaria",
+    "Birth_Rate": 8.9,
+    "Mean_BirthRate": 20.4
+  }
+]

@@ -55,3 +55,21 @@
 .stack p {
     font-size: 18px;
 }
+
+
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: justify;
+    padding-left: 2%;
+}

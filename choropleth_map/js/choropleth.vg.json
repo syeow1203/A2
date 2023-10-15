@@ -1,9 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1250,
-    "height": 600,
+    "width": 600,
+    "height": 300,
     "background": "aliceblue",
-    "title": "Birth Rate per 1,000 Population in 2023",
+    "title": "Consumer Price Index in Different Countries in 2023",
     "data": {
       "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/js/ne_110m_admin_0_countries.json",
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -36,7 +36,7 @@
             "value": 200,
             "bind": {
                 "input": "range",
-                "min": 200,
+                "min": 100,
                 "max": 600,
                 "step": 50,
                 "name": "Zoom Level: "
@@ -79,7 +79,7 @@
 
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/data/Birth%20Rate.csv"
+                "url": "https://raw.githubusercontent.com/syeow1203/A2/main/choropleth_map/data/CPI.csv"
             },
 
             "params": [
@@ -127,13 +127,13 @@
                 "color": {
                     "condition": {
                         "param": "hover",
-                        "field": "Birth_Rate",
-                        "title": ["Birth Rate per 1,000 population"],
+                        "field": "CPI",
+                        "title": ["Consumer Price Index"],
                         "type": "quantitative",
                         "scale": {
                             
                             "type": "threshold",
-                            "domain": [5, 15, 25, 35, 45, 55],
+                            "domain": [100, 150, 300, 500, 1000, 2000],
                             "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603","#822a01", "#5e1101"]
 
                         }
@@ -148,7 +148,7 @@
                     },
                     
                     {
-                        "field": "Birth_Rate", "type": "quantitative", "title": "Birth Rate per 1,000 Population", "format": ","
+                        "field": "CPI", "type": "quantitative", "title": "Consumer Price Index", "format": ","
                     }
                 ],
             

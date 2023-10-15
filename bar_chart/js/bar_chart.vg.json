@@ -13,8 +13,8 @@
             "joinaggregate": [
                 {
                     "op": "mean",
-                    "field": "Mean_CPI",
-                    "as": "AverageCPI"
+                    "field": "Mean_BirthRate",
+                    "as": "AverageBR"
                 }
             ]
         }
@@ -22,33 +22,33 @@
 
     "encoding": {
         "x": {
-            "field": "CPI", "type": "quantitative", "title": "CPI"
+            "field": "Birth_Rate", "type": "quantitative", "title": "Birth Rate"
         },
 
         "y": {
             "field": "Country", "type": "nominal",
-            "sort": ["Brunei",
-                "Switzerland",
-                "Maldives",
-                "Greece",
-                "Cyprus",
-                "Comoros",
-                "Japan",
-                "Zimbabwe",
-                "Belize",
+            "sort": ["Niger",
+                "Chad",
+                "Mali",
+                "Dem. Rep. Congo",
+                "Angola",
+                "Burundi",
+                "The Gambia",
+                "Uganda",
                 "Burkina Faso",
-                "Guinea",
                 "Nigeria",
-                "Ghana",
+                "Bulgaria",
+                "Singapore",
                 "Ukraine",
-                "Egypt",
-                "Suriname",
-                "Malawi",
-                "Iran",
-                "Sudan",
-                "Venezuela"
+                "Finland",
+                "Portugal",
+                "Greece",
+                "Spain",
+                "Japan",
+                "Italy",
+                "South Korea"
                 
-                ]
+            ]
         }
     },
 
@@ -58,7 +58,7 @@
                 "type": "text",
                 "baseline": "middle",
                 "dx": -300,
-                "dy": -50,
+                "dy": -80,
                 "fontSize": 15,
                 "fontWeight": "italic"
             },
@@ -73,7 +73,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum['Country'] == 'Venezuela'",
+                        "test": "datum['Country'] == 'Niger'",
                         "value": 1
                     },
                     "value": 0
@@ -83,13 +83,13 @@
 
         {
             "mark": {
-                "type": "bar", "cornerRadiusEnd": 5
+                "type": "bar"
             },
 
             "encoding": {
                 "color": {
                     "condition": {
-                        "test": "datum['CPI'] >= datum.Mean_CPI", "value": "#c03636"
+                        "test": "datum['Birth_Rate'] >= datum.Mean_BirthRate", "value": "#c03636"
                     },
 
                     "value": "#3654c0"
@@ -101,13 +101,13 @@
             "mark": {
                 "type": "text",
                 "align": "right",
-                "xOffset": -2,
+                "xOffset": -5,
                 "fontSize": 10
             },
 
             "encoding": {
                 "text": {
-                    "field": "CPI", "type": "quantitative", "format": ".2f"
+                    "field": "Birth_Rate", "type": "quantitative", "format": ".2f"
                 },
 
                 "color": {
