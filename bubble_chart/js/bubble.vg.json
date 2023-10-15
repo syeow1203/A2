@@ -50,6 +50,7 @@
                 "color":{
                     "field": "Unemployment_Rate",
                     "type": "quantitative",
+                    "title": "Unemployment Rate",
                     "scale": {
                         "domain": [0, 0.3]
                     }

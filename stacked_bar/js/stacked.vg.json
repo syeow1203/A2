@@ -1,78 +1,96 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1100,
-    "height": 600,
-    "background": "aliceblue",
-    "title": "Education Rate by Continents",
-    "data": {
-      "url": "https://raw.githubusercontent.com/syeow1203/A2/main/stacked_bar/data/Enrolment.csv"
-    },
-    "params": [
-      {
-        "name": "cont",
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "background": "aliceblue",
+  "title": "Education Rate by Continents",
+  "data": {
+    "url": "https://raw.githubusercontent.com/syeow1203/A2/main/stacked_bar/data/Enrolment.csv"
+  },
 
-          "labels": [
-            "Show All",
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "name": "Continent : "
-        }
+  "params": [
+    {
+      "name": "cont",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent : "
       }
-    ],
+    }
+  ],
 
-    "transform": [
-      {
-        "filter": "cont == null || datum.Continent == cont"
-      },
-
-      {"fold":["Gross_Primary_Education_Enrollment", "Gross_Tertiary_Education_Enrollment"]}
-
-    ],
-
-    "encoding": {
-      "x": {
-        "field": "Continent",
-        "type": "nominal",
-        "title": "Continent"
-      },
-      "y": {
-        "field": "value",
-        "type": "quantitative",
-        "title": "Education Rate"
-      }
+  "transform": [
+    {
+      "filter": "cont == null || datum.Continent == cont"
     },
-    "layer": [
-      {
-        "mark": "bar",    
-        "encoding": {
-          "color": {
-            "field": "key",
-            "title" : "Education Group",
-            "type": "nominal"
+
+    {
+      "fold":[
+      "Gross_Primary_Education_Enrollment", "Gross_Tertiary_Education_Enrollment"
+      ]
+    }
+
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "Continent",
+      "type": "nominal",
+      "title": "Continent"
+    },
+
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Education Rate"
+    }
+  },
+
+  "layer": [
+    {
+      "mark": "bar",    
+      "encoding": {
+        "color": {
+          "field": "key",
+          "title" : "Education Group",
+          "type": "nominal",
+          "scale": {
+            "range": ["#1f77b4", "#a21d02"]
+          }
+        },
+        "opacity": {"value": 1},
+        "tooltip": [
+          {
+            "field": "Continent", "type": "nominal"
           },
-          "opacity": {"value": 1},
-          "tooltip": [
-            {"field": "Continent", "type": "nominal"},
-            {"field": "Gross_Primary_Education_Enrollment", "type": "quantitative", "title": "Primary Education Rate"},
-            {"field": "Gross_Tertiary_Education_Enrollment", "type": "quantitative", "title": "Tertiary Education Rate"}
-          ]
-        }
+
+          {
+            "field": "Gross_Primary_Education_Enrollment", "type": "quantitative", "title": "Primary Education Rate"
+          },
+
+          {
+            "field": "Gross_Tertiary_Education_Enrollment", "type": "quantitative", "title": "Tertiary Education Rate"
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
